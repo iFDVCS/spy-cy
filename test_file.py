@@ -16,7 +16,7 @@ ATGC_comb = mkstr(letters)
 # opening the file to read
 # put the position and the name of the file like :
 # "/Users/Anna/Documents/iFDV/computer science/text_to_code.txt"
-with open(input()) as text_file:
+with open(raw_input()) as text_file:
     no_crypt = list(text_file.read())
 
 # no encryption here, only translation to DNA
