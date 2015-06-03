@@ -1,0 +1,17 @@
+{% extends "template.html" %}
+
+{% block body %}
+  {% from "formhelp.html" import render_field %}
+  <form method=post enctype=multipart/form-data action='/encrypt'>
+    <dl>
+      {{ render_field(form.message) }}<br>
+      {{ render_field(form.key) }}<br>
+      {{ render_field(form.level) }}<br>
+      {{ render_field(form.upload_genome) }}
+      {{ render_field(form.default_genome) }}<br>
+    </dl>
+    <input type=submit value=Encrypt>
+  </form>
+  
+
+{% endblock %}
