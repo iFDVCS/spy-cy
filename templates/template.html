@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang='en'>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="static/style.css">
+  <title>DNA-Crypter: {{title}}</title>
+</head>
+
+<body>
+<table width="100%">
+  <tr>
+  <td width="15%">
+    <a href="http://127.0.0.1:5000/">
+      <img src="static/logo1.png" alt="DNA-Crypter Home" 
+       style="width:100%; border:0">
+    </a>
+  </td>
+  <td width="80%">
+    <img src="static/banner_dna.jpg" 
+     style="width:100%; border:0">
+  </td>
+  <tr>
+  <td width="15%">
+    <ul>
+      <dl>Quick links:</dl>
+      <li><a href="http://127.0.0.1:5000/">Home</a></li>
+      <li><a href="http://127.0.0.1:5000/encrypt">Encrypt</a></li>
+      <li><a href="http://127.0.0.1:5000/decrypt">Decrypt</a></li>
+      <li><a href="http://127.0.0.1:5000/help">Help</a></li>
+      <li><a href="http://127.0.0.1:5000/about">About</a></li>
+    </ul>
+  </td>
+  <td  width="80%" style="padding:20px">
+  <h1>{{title}}<h1/>
+  <p1>{% block body %}{% endblock %}</p1>
+  </td>
+  </tr>
+</table>
+
+</body>
+</html>
+

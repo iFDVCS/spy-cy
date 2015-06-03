@@ -1,0 +1,20 @@
+{% extends "template.html" %}
+
+{% block body %}
+<!-- write help/faq here -->
+<p1>
+DNA-Crypter is an application to enable anyone to encode a secret message into a DNA sequence.<br>
+An encrypted DNA sequence may be sent directly as a file, or indirectly when inserted into an organism. The only way to decrypt the message is with the unique chosen key and DNA-Crypter.<br><br>
+</p1>
+<h2>Frequently Asked Questions</h2>
+<dl>
+  <dt><p1>How do I encrypt a message?</p1></dt>
+  <dd><p2>- <a href="http://127.0.0.1:5000/encrypt">Encrypt</a>. Here you insert the  message, chosen key, level of encryption, and the DNA sequence to use. There is the option to upload a txt/fna file with a DNA sequence, or use the default genome provided. You will recieve a txt file with the encrypted DNA sequence.</p2></dd><br>
+  <dt><p1>Where can I find a DNA sequence to encode my message?</p1></dt>
+  <dd><p2>You may use any DNA sequence in a txt or fna file. The <a href="http://www.ncbi.nlm.nih.gov/genome/">NCBI website</a> has many genome sequences available to download. This is where the default <i>Saccharomyces cerevisiae</i> genome was obtained.</p2></dd><br>
+  <dt><p1>How do I decrypt a message?</p1></dt>
+  <dd><p2>- <a href="http://127.0.0.1:5000/decrypt">Decrypt</a>. Here you upload the encrypted DNA sequence and insert the key to obtain the decrypted message.</p2></dd><br>
+  <dt><p1>What do the levels of encryption mean?</p1></dt>
+  <dd><p2>- This refers to the complexity of the encryption, with 1 being the lowest and 5 the highest. The more complex, the less possible it is to decrypt without the key and decryption application of DNA-Crypter.</p2></dd><br>
+</p1></dl>
+{% endblock %}
