@@ -1,20 +1,19 @@
 def caesar_encrypt(key, message):
 	def mkstr(prefix):
-    	if len(prefix) == 5:
-        	return [prefix]
-    	
-    	combs = []
-    	combs.extend(mkstr(prefix + "A"))
-    	combs.extend(mkstr(prefix + "T"))
-    	combs.extend(mkstr(prefix + "G"))
-    	combs.extend(mkstr(prefix + "C"))
-    	return combs
+    		if len(prefix) == 5:
+        		return [prefix]
+    		combs = []
+    		combs.extend(mkstr(prefix + "A"))
+    		combs.extend(mkstr(prefix + "T"))
+    		combs.extend(mkstr(prefix + "G"))
+    		combs.extend(mkstr(prefix + "C"))
+    		return combs
  
 	letters = ""
 	ATGC_comb = mkstr(letters)
 
-	with open(rmessage) as text_file:
-    	no_crypt = list(text_file.read())
+	with open(message) as text_file:
+    		no_crypt = list(text_file.read())
 
 # enter the key
 
@@ -23,16 +22,15 @@ def caesar_encrypt(key, message):
 # modification of the key to get an active key
 	key = list(key)
 	print key
-	a  = 0
+	act_key  = 0
 	for element in key :
-    	a += ord(element)
-	print a
+    	act_key += ord(element)
 
 # encryption of the text using permutation of letter. (useless because we change the alphabet, it is not more encrypt
 # than just change alphabet to DNA)
 	encrypt = []
 	for chrct in no_crypt:
-    	letter = ATGC_comb[ord(chrct) + a]
+    	letter = ATGC_comb[ord(chrct) + act_key]
     	encrypt.append(letter)
 
 	encrypt = ''.join(encrypt)
