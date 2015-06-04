@@ -9,24 +9,24 @@ def find_all(msg, site):
 def encrypt(key, message, genome, level):
 
 	if level == 1:
-		import caesar_encrypt as c
-		encrypt_message = c.caesar_encrypt(key, message)
+		import caesar_encrypt as ce
+		encrypt_message = ce.caesar_encrypt(key, message)
 
 	elif level == 2:
-		import vigenere_encrypt as v
-		encrypt_message = v.vigenere_encrypt(key, message)
+		import vigenere_encrypt as ve
+		encrypt_message = ve.vigenere_encrypt(key, message)
 
 	elif level == 3:
-		import hill_encrypt as h
-		encrypt_message = h.hill_encrypt(key, message)
+		import hill_encrypt as he
+		encrypt_message = he.hill_encrypt(key, message)
 
 	elif level == 4:
-		import rossignol_encrypt as r
-		encrypt_message = r.rossignol_encrypt(key, message)
+		import rossignol_encrypt as re
+		encrypt_message = re.rossignol_encrypt(key, message)
 
 	elif level == 5:
-		import linear_encrypt as l
-		encrypt_message = l.linear_encrypt(key, message)
+		import linear_encrypt as le
+		encrypt_message = le.linear_encrypt(key, message)
 
 	return encrypt_message
 
