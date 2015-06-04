@@ -7,11 +7,10 @@
       {{ render_field(form.message) }}<br>
       {{ render_field(form.key) }}<br>
       {{ render_field(form.level) }}<br>
-      {{ render_field(form.upload_genome) }}
-      {{ render_field(form.default_genome) }}<br>
+      {{ render_field(form.upload_genome) }}<br>
     </dl>
     <input type=submit value=Encrypt>
   </form>
-  
-
+  <br><hr>
+{% block result %}{% endblock %}
 {% endblock %}

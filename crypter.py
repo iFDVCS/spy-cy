@@ -4,15 +4,15 @@
 from flask import Flask, request, render_template, url_for, flash, session, redirect
 from werkzeug import secure_filename
 
-#import the form module
+#import the form module created
 from crypter_forms import EncryptionForm, DecryptionForm
 
 #use the flask module to create an application
 app = Flask(__name__)
 app.config.from_object(__name__)
 
-UPLOAD_FOLDER = '/home/student/flaskr/uploads'
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+#UPLOAD_FOLDER = '/home/student/flaskr/uploads'
+#app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 #set the route for each page.
 #show the template rendered with the specific page.
@@ -20,37 +20,40 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 def run_homepage():
     return render_template('homepage.html', title="Home")
 
-@app.route('/encrypt', methods=['GET', 'POST'])
+@app.route('/encrypt', methods=('GET', 'POST'))
 def run_encrypt():
     form = EncryptionForm(request.form)
     if request.method == 'POST' and form.validate():
-    #if form.validate_on_submit():
-        #key = form.key.data
-        #message = form.message.data
-        #level = form.level.data
-        file = form.upload_genome.data
-        filename = secure_filename(form.upload_genome.data.filename)
-        file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+        key = form.key.data
+        message = form.message.data
+        level = form.level.data
+        #filename = secure_filename(form.upload_genome.file.filename)
+        #fieldname = field.file.filename.lower()
+        print(filename)
+        #file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
         #form.upload_genome.data.save('home/student/flaskr/uploads/' + filename)
-        flash('Your message has been encrypted')
-        return redirect(url_for('run_encrypt_result'))
-    return render_template('encrypt.html', title="Encrypt", form=form)
+        #flash('Your message has been encrypted')
+        return render_template('encrypt_result.html', title="Encrypt",form=form)
+    else:
+        return render_template('encrypt.html', title="Encrypt", form=form)
 
-@app.route('/encrypt_result', methods=['GET', 'POST'])
-def run_encrypt_result():
-    return render_template('encrypt_result.html', title="Encryption Result")
+#@app.route('/encrypt_result', methods=('GET', 'POST'))
+#def run_encrypt_result():
+#    return render_template('encrypt_result.html', title="Encryption Result")
 
-@app.route('/decrypt', methods=['GET', 'POST'])
+@app.route('/decrypt', methods=('GET', 'POST'))
 def run_decrypt():
     form = DecryptionForm(request.form)
-    #if request.method == 'POST' and form.validate():
-    if form.validate_on_submit():
-        return redirect('/decrypt_result')
-    return render_template('decrypt.html', title="Decrypt", form=form)
+    if request.method == 'POST' and form.validate():
+        enter_key = form.enter_key.data
+        encrypted_genome = form.encrypted_genome.data
+        return render_template('decrypt_result.html', title="Decrypt", form=form)
+    else:
+        return render_template('decrypt.html', title="Decrypt", form=form)
 
-@app.route('/decrypt_result', methods=['GET', 'POST'])
-def run_decrypt_result():
-    return render_template('decrypt_result.html', title="Decryption Result")
+#@app.route('/decrypt_result', methods=('GET', 'POST'))
+#def run_decrypt_result():
+#    return render_template('decrypt_result.html', title="Decryption Result")
 
 @app.route('/help')
 def run_help():
