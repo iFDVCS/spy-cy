@@ -9,7 +9,7 @@ import jinja2
 from crypter_forms import EncryptionForm, DecryptionForm
 
 #import the modules with encrypt and decrypt functions in the encrypt.py and decrypt.py file.
-from encrypt import encrypt
+import encrypt as en
 from decrypt import decrypt
 
 #use the flask module to create an application
@@ -40,7 +40,7 @@ def run_encrypt():
         level_input = form.level
         DNA_sequence_input = form.DNA_sequence.data
         DNA_sequence_input = DNA_sequence_input.strip()
-        return render_template('encrypt_result.html', title="Encrypt", form=form, result = encrypt(message_input, key_input, level_input, DNA_sequence_input))  
+        return render_template('encrypt_result.html', title="Encrypt", form=form, result = en.encrypt(message_input, key_input, level_input, DNA_sequence_input))  
     else:
         return render_template('encrypt.html', title="Encrypt", form=form)
 

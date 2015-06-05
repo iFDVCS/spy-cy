@@ -1,29 +1,30 @@
+<!-- This is the html template that defines the page layout of the website. This template is added to by the various child templates -->
 <!doctype html>
 <html lang='en'>
 
+<!-- The head links to the style.css file, this ensures that all the templates have the same style in terms of font and the table format -->
+<!-- The title of the page is defined, to show as the name of the tab when the web page is open. It is changed for each page on the website when you define title. DNA-Crypter: {{title}} allows that title to be dynamic. -->
 <head>
   <link rel="stylesheet" type="text/css" href="static/style.css">
   <title>DNA-Crypter: {{title}}</title>
 </head>
 
+<!-- The body of the template is composed of a table with two coloums, one being the side bar with the logo and links to pages of the website, the other being the body of the website-->
+<!-- The width of the table and each column are set in percentages so that it adjusts to the size of the window. -->
+<!-- The logo image is put in the top of the first column, is a link back to the homepage -->
+<!-- The second column is given the dynamic  block body / endblock , this area may be filled by the various child templates. -->
 <body>
 <table width="100%">
   <tr>
   <td width="15%">
     <a href="http://127.0.0.1:5000/">
-      <img src="static/logo1.png" alt="DNA-Crypter Home" 
+      <img src="static/spycy_logo.jpg" alt="DNA-Crypter Home" 
        style="width:100%; border:0">
     </a>
-  </td>
-  <td width="80%">
-    <img src="static/banner_dna.jpg" 
-     style="width:100%; border:0">
-  </td>
-  <tr>
-  <td width="15%">
+    <hr>
     <ul>
       <p1><b>
-      Links:
+      <h2>Links:</h2>
       <li><a href="http://127.0.0.1:5000/">Home</a></li>
       <li><a href="http://127.0.0.1:5000/encrypt">Encrypt</a></li>
       <li><a href="http://127.0.0.1:5000/decrypt">Decrypt</a></li>
@@ -32,13 +33,12 @@
       </b></p1>
     </ul>
   </td>
-  <td  width="80%" style="padding:15px">
+  <td  width="85%" style="padding:15px">
   <h1>{{ title }}<h1/>
   <p1>{% block body %}{% endblock %}</p1>
   </td>
   </tr>
 </table>
-
 </body>
-</html>
 
+</html>

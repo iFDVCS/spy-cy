@@ -1,14 +1,18 @@
 {% extends "template.html" %}
 
+<!-- The home page body contains the links to parts of the website, showing where to encrypt and decrypt, also the help and about pages -->
 {% block body %}
 <h2>Welcome to DNA-Crypter!</h2>
 <p1>
 Encode your secret message into a DNA sequence.<br>
+
 - Get started below:
 <ul id="cryptmenu">
   <li><a href="http://127.0.0.1:5000/encrypt">Encrypt</a></li>
   <li><a href="http://127.0.0.1:5000/decrypt">Dencrypt</a></li>
 </ul>
+
+<img src="static/dna_image.jpg" alt="DNA Cryptography" width="350px"><br>
 <hr>
 - For more information:
 <ul>

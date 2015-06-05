@@ -1,5 +1,7 @@
 {% extends "template.html" %}
 
+<!-- The body contains the form to fill out for encryption, the encrypt_result template builds on from this after the form is validated. -->
+<!-- Imports the render_field from the helper form, then renders the five variables: message, key, confirm_key, level, and DNA_sequence -->
 {% block body %}
   {% from "_formhelpers.html" import render_field %}
   <form method=post enctype=multipart/form-data action='/encrypt'>

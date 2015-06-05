@@ -1,16 +1,23 @@
+<!-- The main template is extended with this child template-->
 {% extends "template.html" %}
 
+<!-- The body gives about information on the project basis, the team, acknowledgemnts, and the resources we used. -->
 {% block body %}
 <p1>
 The DNA-Crypter program was created by students of International Frontiers in Life Science, The Center for Reasearch and Interdisciplinary, Paris. The members of the team include Anna Danese, Joanna Summers and Andjelika Kalezic.<br>
-We would like to thank Omar Awile and Guillame Villain for their help and teachings.<br><br>
+We would like to thank Omar Awile and Guillame Villain for their help and teachings.<br>
+Omar, we owe you many beers :)<br><br>
 </p1>
 <p2>
-Code was written using Python language.<br>
+Code was written using Python language, in IPython notebook.
+<br>
 - Libraries utilised: 
 <ul>
-  <li><a href="http://flask.pocoo.org/" target="_blank">Flask</a></li> 
-  <li><a href="https://wtforms.readthedocs.org/en/latest/">WTForms</a></li>
+  	<li><a href="https://www.python.org/" target="_blank">Python</a></li> 
+  	<li><a href="http://jinja.pocoo.org/" target="_blank">Jinja</a></li>
+  	<li><a href="http://flask.pocoo.org/" target="_blank">Flask</a></li> 
+	<li><a href="https://wtforms.readthedocs.org/en/latest/">WTForms</a></li>
+	<li><a href="https://www.dlitz.net/software/pycrypto/">PyCrypto</a></li>
 </ul>
 </p2>
 {% endblock %}

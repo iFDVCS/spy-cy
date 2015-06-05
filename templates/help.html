@@ -1,7 +1,7 @@
 {% extends "template.html" %}
 
+<!-- The body gives information to help the user correctly use the website application-->
 {% block body %}
-<link rel="stylesheet" type="text/css" href="static/style.css">
 <p1>
 DNA-Crypter is an application to enable anyone to encode a secret message into a DNA sequence.<br>
 An encrypted DNA sequence may be sent directly, or indirectly when inserted into an organism. The only way to decrypt the message is with the unique chosen key and DNA-Crypter.<br><br>
@@ -9,13 +9,13 @@ An encrypted DNA sequence may be sent directly, or indirectly when inserted into
 <h2>Frequently Asked Questions</h2>
 <dl>
   <dt><p1>How do I encrypt a message?</p1></dt>
-  <dd><p2>- <a href="http://127.0.0.1:5000/encrypt">Encrypt</a>. Here you insert the  message, chosen key, level of encryption, and input the DNA sequence to use. You will recieve an output with the encrypted DNA sequence.</p2></dd><br>
+  <dd><p2>- <a href="http://127.0.0.1:5000/encrypt">Encrypt</a>. Here you insert the  message, chosen key, level of encryption, and type the ATGC DNA sequence to use. You will recieve an output with the encrypted DNA sequence.</p2></dd><br>
   <dt><p1>Where can I find a DNA sequence to encode my message?</p1></dt>
-  <dd><p2>- You may input any DNA sequence. The <a href="http://www.ncbi.nlm.nih.gov/genome/">NCBI website</a> has many genome sequences available to download. This is where the default <i>Saccharomyces cerevisiae</i> genome was obtained.</p2></dd><br>
+  <dd><p2>- You may input any ATGC nucleotide DNA sequence, please when pasting it in remove any annotations attached. The <a href="http://www.ncbi.nlm.nih.gov/genome/">NCBI website</a> has many genome sequences available to download. This is where the default <i>Saccharomyces cerevisiae</i> genome was obtained that you may access.</p2></dd><br>
   <dt><p1>How do I decrypt a message?</p1></dt>
-  <dd><p2>- <a href="http://127.0.0.1:5000/decrypt">Decrypt</a>. Here you upload the encrypted DNA sequence and insert the key to obtain the decrypted message.</p2></dd><br>
+  <dd><p2>- <a href="http://127.0.0.1:5000/decrypt">Decrypt</a>. Here you input the encrypted DNA sequence and insert the secret key to obtain the decrypted message.</p2></dd><br>
   <dt><p1>What do the levels of encryption mean?</p1></dt>
-  <dd><p2>- This refers to the complexity of the encryption, with 1 being the lowest and 5 the highest. The more complex, the less possible it is to decrypt without the key and decryption application of DNA-Crypter.</p2></dd><br>
+  <dd><p2>- This refers to the complexity of the encryption, with 1 being the lowest and 4 the highest. The more complex, the less possible it is to decrypt without the key and decryption application of DNA-Crypter.</p2></dd>
 </dl>
 </p1>
 {% endblock %}

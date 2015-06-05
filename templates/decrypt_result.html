@@ -1,8 +1,7 @@
 {% extends "decrypt.html" %}
 
-{% set enter_key = form.enter_key.data %}
-{% set encrypted_DNA = encrypted_DNA.data %}
-
+<!-- This template adds onto the decrypt template when the form is submitted and validated-->
+<!-- Takes the result of the decrypt function using the variables obtained from the form, and inserts the decrypted message into a text area-->
 {% block result %}
 <br><hr>
 <h2>Decrypted Result:</h1>
