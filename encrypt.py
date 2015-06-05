@@ -21,8 +21,9 @@ def encrypt(key, message, genome, level):
 
 # second cipher, it is not working, I am stuck at the end...
     elif level == 2:
+        # I add a problem with global errors, so for this cipher, the key is generating in this module and not in the 
+        # vigenere one
         import random
-        
         import vigenere_encrypt as ve
             # get a useful value from the key in order to generate pseudo randomnumber
         act_key = 0
