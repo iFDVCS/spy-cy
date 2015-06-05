@@ -63,5 +63,3 @@ def encrypt(message, key, level, genome):
 
 
     return "".join(genome_list)
-
-    return encrypt_message
