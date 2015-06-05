@@ -1,4 +1,4 @@
-%%writefile /Users/Anna/Desktop/Spy/encrypt.py
+
 def find_all(msg, site):
     start = 0
     while site in msg:
