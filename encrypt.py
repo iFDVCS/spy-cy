@@ -12,7 +12,7 @@ def find_all(msg, site):
 # it is the main function of encryption. It will choose the type of encryption and import the 
 # right module to encrypt the message.
 
-def encrypt(key, message, genome, level):
+def encrypt(message, key, level, genome):
 
 # first cipher, it is working
     if level == 1:
