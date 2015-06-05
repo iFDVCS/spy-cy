@@ -1,3 +1,4 @@
+%%writefile /Users/Anna/Desktop/Spy/encrypt.py
 def find_all(msg, site):
     start = 0
     while site in msg:
@@ -13,8 +14,20 @@ def encrypt(key, message, genome, level):
 		encrypt_message = ce.caesar_encrypt(key, message)
 
 	elif level == 2:
+        import random
 		import vigenere_encrypt as ve
-		encrypt_message = ve.vigenere_encrypt(key, message)
+            # get a useful value from the key in order to generate pseudo randomnumber
+        act_key = 0
+        for chrct in key:
+            act_key += ord(chrct)
+
+        random_numbers = []
+        random.seed(act_key)
+
+for i in range(len(message)):
+	random_numbers.append(random.randint(1, 255))
+    
+		encrypt_message = ve.vigenere_encrypt(random_number, message)
 
 	elif level == 3:
 		import hill_encrypt as he
@@ -25,7 +38,6 @@ def encrypt(key, message, genome, level):
 		encrypt_message = ae.AES_encrypt(key, message)
 
 	return encrypt_message
-    print encrypt_message
+#position = find_all(genome_sequence, ATTTTA)
+#print position
 
-#	position = find_all(genome_sequence, ATTTTA)
-#	print position
