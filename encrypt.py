@@ -53,8 +53,15 @@ def encrypt(message, key, level, genome):
 
 # fist we find a pattern of a specific sequence. DJINA did a dictionary to have choice but I haven't
 # the time to use it. The code is on github. I willuse just a sequence.
-    position = find_all(genome, ATTTTA)
+    restrict_site = 'GATTTTAC'
+    position = find_all(genome, restrict_site)
+    genome = upper(genome)
     genome_list = list(genome)
     genome_list.insert(position, encrypt_message)
+    genome_list.insert((position + len(encrypt_message)), restrict_site)
+    genome_list.append(restrict_site)
+
+
+    return "".join(genome_list)
 
     return encrypt_message
