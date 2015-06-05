@@ -39,6 +39,7 @@ def run_encrypt():
         key_input = form.key
         level_input = form.level
         DNA_sequence_input = form.DNA_sequence.data
+        DNA_sequence_input = DNA_sequence_input.strip()
         return render_template('encrypt_result.html', title="Encrypt", form=form, result = encrypt(message_input, key_input, level_input, DNA_sequence_input))  
     else:
         return render_template('encrypt.html', title="Encrypt", form=form)
@@ -51,7 +52,7 @@ def run_decrypt():
     if request.method == 'POST' and form.validate():
         enter_key_input = form.enter_key
         encrypted_DNA_input = form.encrypted_DNA
-        return render_template('decrypt_result.html', title="Decrypt", form=form, result = decrypt(enter_key_input, encrypted_DNA_input)
+        return render_template('decrypt_result.html', title="Decrypt", form=form, result = decrypt(enter_key_input, encrypted_DNA_input))
     else:
         return render_template('decrypt.html', title="Decrypt", form=form)
 

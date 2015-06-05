@@ -1,7 +1,7 @@
 #write all the code from this cell into a python file, of a set name and directory.
-    
-#import the flask module, and wtforms to make forms
-#import the various Fields and validators from wtforms, required for the form
+
+#import the flask module, and wtforms to make forms.
+#import the various Fields and validators from wtforms, required for the form.
 from flask import Flask
 from wtforms import Form, PasswordField, StringField, BooleanField, SelectField, TextAreaField, validators
 from wtforms.validators import ValidationError, InputRequired, EqualTo, Length
@@ -28,6 +28,18 @@ def key_check(form,field):
     if len(field.data) < 6:
         raise ValidationError('Key must be at least 6 characters.')    
     
+#check if DNA sequence input is only composed of A, T, G, C.
+#if the DNA sequence they put in contains any other character, gives error.
+#note: is also able to encrypt an empty genome (so just the message into DNA).
+def dna_check(form,field):
+    characters = []
+    dna = field.data
+    dna = dna.strip()
+    characters = list(dna)
+    for i in characters:
+        if (i != "A") and (i != "T") and (i != "G") and (i != "C") and (i != "a") and (i != "t") and (i != "g") and (i != "c") and (i != "\r"):
+            raise ValidationError('DNA sequence must be composed of A, T, G, or C only.')
+    
 #form for encryption using wtform functions.
 #takes the information of the message and DNA sequence with a Text area box.
 #takes the information of the key with a password box, does not show characters while typing to keep security of key.
@@ -39,7 +51,7 @@ class EncryptionForm(Form):
     key = PasswordField('Choose your secret key:', [EqualTo('confirm_key', message='The keys must match.')])
     confirm_key = PasswordField('Re-enter key:', [InputRequired(), key_check])
     level = SelectField('Choose the level of encryption:', choices=[('1','Level 1'), ('2','Level 2'), ('3','Level 3'), ('4', 'Level 4')], validators=[InputRequired()])
-    DNA_sequence = TextAreaField('Paste your DNA sequence:', [InputRequired()])
+    DNA_sequence = TextAreaField('Paste your DNA sequence:', [dna_check])
     
 #other options of form input unable to successfully implement.
     #default_genome = BooleanField('Use the default genome sequence:') 
@@ -50,4 +62,4 @@ class EncryptionForm(Form):
 #same theory as in the encryption form above.
 class DecryptionForm(Form):
     enter_key = PasswordField('Enter your secret key:', [InputRequired(), key_check])
-    encrypted_DNA = TextAreaField('Paste the encrypted DNA sequence:', [InputRequired()])
+    encrypted_DNA = TextAreaField('Paste the encrypted DNA sequence:', [InputRequired(), dna_check])
