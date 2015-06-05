@@ -26,7 +26,7 @@ def caesar_encrypt(key, message):
 		letter = ATGC_comb[(ord(chrct) + act_key)%256]
 		encrypt.append(letter)
 
-		# here I should add the restriction site marker
+		# here I add the restriction site marker
 	encrypt.append(ATGC_comb[ord('1')])
 	encrypt = ''.join(encrypt)
 
