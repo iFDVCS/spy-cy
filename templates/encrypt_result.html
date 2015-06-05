@@ -1,10 +1,13 @@
 {% extends "encrypt.html" %}
 
 {% block result %}
-<h2> Encrypted Result: </h1>
-<p2>Your message "{{ form.message.data }}" has been encrypted into the DNA sequence.</p2><br>
+<br><hr>
+<h2>Encrypted Result:</h1>
+<p1>
+Your message "{{ form.message.data }}" has been encrypted into the DNA sequence.<br>
+Copy your encrypted DNA sequence from the box below:<br>
+</p1>
 
-{{ message_input }}
-{{ form.validate() }}
+<dd><textarea>{{ result }}</textarea></dd>
 
 {% endblock %}

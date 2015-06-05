@@ -1,5 +1,14 @@
 {% extends "decrypt.html" %}
 
+{% set enter_key = form.enter_key.data %}
+{% set encrypted_DNA = encrypted_DNA.data %}
+
 {% block result %}
-<h2> Decrypted Result: </h1>
+<br><hr>
+<h2>Decrypted Result:</h1>
+<p1>
+Your encrypted DNA sequence has been decrypted.<br>
+The decrypted message is given in the box below:<br>
+</p1>
+<dd><textarea>{{ result }}</textarea></dd>
 {% endblock %}
