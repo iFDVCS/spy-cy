@@ -1,3 +1,4 @@
+# list of DNA combinaisons.
 def mkstr(prefix):
     if len(prefix) == 4:
         return [prefix]
@@ -10,8 +11,15 @@ def mkstr(prefix):
  
 letters = ""
 ATGC_comb = mkstr(letters)
+
+# decryption function. It call other functions in order to decrypt the differents types of encryption. 
 def decrypt(key, genome_encrypted):
+    
+    # first we have a genome and we need to find where is our message.
+    # At the end of the message we can find the restriction site that we will search to know where start and finish
+    # our message.
     genome_encrypted = list(genome_encrypted)
+
     encrypt_seq = []
     DNA_letters = []
     
