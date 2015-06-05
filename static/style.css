@@ -1,25 +1,31 @@
 h1 {
     color:blue;
     font-family:verdana;
-    font-size:150%;
+    font-size:30px;
 }
 
 h2 {
     color:blue;
     font-family:verdana;
-    font-size:100%;
+    font-size:20px;
 }
 
 p1 {
     color:black;
     font-family:courier;
-    font-size:80%;
+    font-size:16px;
 }
 
 p2 {
     color:black;
     font-family:courier;
-    font-size:70%;
+    font-size:14px;
+}
+
+p3 {
+    color:red;
+    font-family:courier;
+    font-size:14px;
 }
 
 table, th, td {

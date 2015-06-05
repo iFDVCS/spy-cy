@@ -1,13 +1,14 @@
 {% extends "template.html" %}
 
 {% block body %}
-  {% from "formhelp.html" import render_field %}
+  {% from "_formhelpers.html" import render_field %}
   <form method=post enctype=multipart/form-data action="/decrypt">
-    <dl>
+    <p1><dl>
       {{ render_field(form.enter_key) }}<br>
-      {{ render_field(form.encrypted_genome) }}<br>
-    </dl>
+      {{ render_field(form.encrypted_DNA) }}<br>
+    </dl></p1>
     <input type=submit value=Decrypt>
   </form>
   <br><hr>
+{% block result %}{% endblock %}
 {% endblock %}

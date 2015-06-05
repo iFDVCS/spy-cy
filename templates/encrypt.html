@@ -1,16 +1,21 @@
 {% extends "template.html" %}
 
 {% block body %}
-  {% from "formhelp.html" import render_field %}
+  {% from "_formhelpers.html" import render_field %}
   <form method=post enctype=multipart/form-data action='/encrypt'>
-    <dl>
+    <p1><dl>
       {{ render_field(form.message) }}<br>
       {{ render_field(form.key) }}<br>
+      {{ render_field(form.confirm_key) }}<br>
+      <p2><dd>Note: Key must be at least 6 characters. Ensure you keep your chosen key somewhere safe, it is required for decryption of your message.</p2></dd><br>
       {{ render_field(form.level) }}<br>
-      {{ render_field(form.upload_genome) }}<br>
+      {{ render_field(form.DNA_sequence) }}<br>      
     </dl>
     <input type=submit value=Encrypt>
+  </p1>
   </form>
   <br><hr>
 {% block result %}{% endblock %}
 {% endblock %}
+
+{ key }
