@@ -55,6 +55,8 @@ def hill_encrypt(key, message):
     for vector in no_crypt_vector_list:
         encrypt_vector = np.dot(A, vector)
         encrypt_vector_list.append(list(encrypt_vector))
+    encrypt_vector_list = [[sum(encrypt_vector_list[0]),sum(encrypt_vector_list[1])],[sum(encrypt_vector_list[2]),sum(encrypt_vector_list[3])]]
+
     
     DNA_message = []
     for vector in encrypt_vector_list:
