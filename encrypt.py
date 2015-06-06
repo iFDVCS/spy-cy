@@ -1,4 +1,5 @@
-%%writefile /Users/Anna/Desktop/Spy/encrypt_2nd.py
+# youhouhou !! It is working !! Now I can see that I have an error in vigenere code and I will fix it quickly :D
+# But first I will rewrite the decryption !! So happy !!!!!!
 
 import random
 import string
