@@ -7,6 +7,15 @@ from Crypto import Random
 from Crypto.Cipher import AES
 import base64
 
+# DJINA'sfunction, used to find some specfics sequences into the genome where we want 
+# incorporate the message.
+def find_all(msg, site):
+    start = 0
+    while site in msg:
+        start = msg.find(site, start)
+        if start == -1: return
+        yield start
+        start += len(site) 
 
 
 # list of ATGC combinaisons that it used to translate message into DNA sequence
@@ -163,7 +172,22 @@ def encrypt(message, key, level, genome, encrypt_message =""):
     elif level == 4:
         encrypt_message = AES_encrypt(key, message)
     
-    return encrypt_message
+    #return encrypt_message
 
-
+# before to encrypt the message we will found where in the genome we will put the message.
+# that's why we are searching a specific pattern. 
+    if genome != '':
+# fist we find a pattern of a specific sequence. DJINA did a dictionary to have choice but I haven't
+# the time to use it. The code is on github. I willuse just a sequence.
+        restrict_site = 'GATTTTAC'
+        position = genome.find(restrict_site, 0)
+        #genome = string.upper(genome)
+        genome_list = list(genome)
+        genome_list.insert(position, encrypt_message)
+        genome_list.insert((position + len(encrypt_message)), restrict_site)
+        genome_list.append(restrict_site)
+        return "".join(genome_list)
+    else:
+        encrypt_message = encrypt_message + "AAAAAAAA"
+        return encrypt_message
         
