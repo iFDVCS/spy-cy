@@ -10,7 +10,7 @@ These utilise the algorithms: Caesar, Vigenere, Hill, and AES.
 
 How to set up:
 * Install in the command line: Python, Flask, and WTForms (e.g. pip install Flask).
-* Download all the files in this spy-cy repository, place in a folder.
+* Download all the files in this iFDVCS/spy-cy repository, place in a folder.
 * In the command line, change the directory the the folder containing all the files.
 
 How to run DNA-Crypter:
@@ -22,4 +22,5 @@ How to run DNA-Crypter:
 Good-luck encrypting and decrypting your DNA message! 
 Try sending the encrypted DNA sequence to a friend for them to decrypt (as well as the secret key) :)
 
-- From the Spy-cy team: Joanna, Anna and Andjelika.
+
+From the Spy-cy team: Joanna, Anna and Andjelika.
